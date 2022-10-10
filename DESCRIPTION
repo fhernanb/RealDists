@@ -1,0 +1,13 @@
+Package: RealDists
+Title: Real Statistical Distributions
+Version: 0.0.0.9000
+Authors@R: 
+    person("Freddy", "Hernandez", , "fhernanb@unal.edu.co", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7459-3329"))
+Description: This package implements statistical distributions with Real (-Inf, Inf) support.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+Imports: 
+    gamlss.dist
