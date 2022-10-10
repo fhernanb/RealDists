@@ -11,3 +11,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Imports: 
     gamlss.dist
+URL: https://github.com/fhernanb/RealDists
+BugReports: https://github.com/fhernanb/RealDists/issues
