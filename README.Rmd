@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 # RealDists <img src="auxiliar/figures/logo.png" align="right" height="180" align="right"/>
 
-In this package are available multiple useful distributions for reliability analysis. With this package it is possible to estimate parameters and fit regression models within GAMLSS framework.
+In this package are available statistical distributions defined in $\Re$. With this package it is possible to estimate parameters and fit regression models within GAMLSS framework.
 
 ## Installation
 
