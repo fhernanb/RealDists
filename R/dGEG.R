@@ -21,7 +21,8 @@
 #'
 #' \eqn{f(x | \mu, \sigma, \nu, \tau) = \frac{\tau}{\nu} \exp(w) \Phi \left( z - \frac{\sigma}{\nu} \right) \left[ \Phi(z) - \exp(w)  \Phi \left( z - \frac{\sigma}{\nu} \right) \right]^{\tau-1}}
 #'
-#' for \eqn{-\infty < x < \infty}. With \eqn{w=\frac{\mu-x}{\nu} + \frac{\sigma^2}{2\nu^2}} and \eqn{z=\frac{x-\mu}{\sigma}}.
+#' for \eqn{-\infty < x < \infty}. With \eqn{w=\frac{\mu-x}{\nu} + \frac{\sigma^2}{2\nu^2}}, \eqn{z=\frac{x-\mu}{\sigma}},
+#' and \eqn{\Phi} is the cumulative function for the standard normal distribution.
 #'
 #' @return
 #' \code{dGEG} gives the density, \code{pGEG} gives the distribution
