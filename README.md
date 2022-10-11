@@ -11,8 +11,8 @@ Status](https://ci.appveyor.com/api/projects/status/github/fhernanb/RealDists?br
 # RealDists <img src="auxiliar/figures/logo.png" align="right" height="180" align="right"/>
 
 In this package are available statistical distributions defined in
-![\Re](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5CRe "\Re").
-With this package it is possible to estimate parameters and fit
+![\Re](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5CRe "\Re")
+support. With this package it is possible to estimate parameters and fit
 regression models within GAMLSS framework.
 
 ## Installation
