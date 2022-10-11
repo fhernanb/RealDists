@@ -8,7 +8,7 @@ Status](https://ci.appveyor.com/api/projects/status/github/fhernanb/RealDists?br
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-ago/RealDists)](https://cran.r-project.org/package=RealDists)
 [![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/RealDists)](https://cran.r-project.org/package=RealDists)
 
-# RealDists <img src="auxiliar/figures/logo.jpg" align="right" height="180" align="right"/>
+# RealDists <img src="auxiliar/figures/logo.png" align="right" height="180" align="right"/>
 
 In this package are available multiple useful distributions for
 reliability analysis. With this package it is possible to estimate
