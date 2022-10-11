@@ -1,4 +1,4 @@
-#' Generalised exponential-Gaussian distribution
+#' The Generalised exponential-Gaussian distribution
 #'
 #' @description
 #' Density, distribution function, quantile function,

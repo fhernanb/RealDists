@@ -1,7 +1,7 @@
-#' The Generalised exponential-Gaussian family
+#' Generalised exponential-Gaussian family
 #'
 #' @description
-#' The function \code{GEG()} defines the Flexible Weibull distribution, a two parameter
+#' The function \code{GEG()} defines the Generalised exponential-Gaussian distribution, a four parameter
 #' distribution, for a \code{gamlss.family} object to be used in GAMLSS fitting
 #' using the function \code{gamlss()}.
 #'
@@ -16,7 +16,8 @@
 #'
 #' \eqn{f(x | \mu, \sigma, \nu, \tau) = \frac{\tau}{\nu} \exp(w) \Phi \left( z - \frac{\sigma}{\nu} \right) \left[ \Phi(z) - \exp(w)  \Phi \left( z - \frac{\sigma}{\nu} \right) \right]^{\tau-1}}
 #'
-#' for \eqn{-\infty < x < \infty}. With \eqn{w=\frac{\mu-x}{\nu} + \frac{\sigma^2}{2\nu^2}} and \eqn{z=\frac{x-\mu}{\sigma}}.
+#' for \eqn{-\infty < x < \infty}. With \eqn{w=\frac{\mu-x}{\nu} + \frac{\sigma^2}{2\nu^2}} and \eqn{z=\frac{x-\mu}{\sigma}}
+#' and \eqn{\Phi} is the cumulative function for the standard normal distribution.
 #'
 #' @example examples/examples_GEG.R
 #'

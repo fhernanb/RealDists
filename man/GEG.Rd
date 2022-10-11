@@ -2,7 +2,7 @@
 % Please edit documentation in R/GEG.R
 \name{GEG}
 \alias{GEG}
-\title{The Generalised exponential-Gaussian family}
+\title{Generalised exponential-Gaussian family}
 \usage{
 GEG(
   mu.link = "identity",
@@ -21,7 +21,7 @@ GEG(
 \item{tau.link}{defines the tau.link, with "log" link as the default for the tau.}
 }
 \description{
-The function \code{GEG()} defines the Flexible Weibull distribution, a two parameter
+The function \code{GEG()} defines the Generalised exponential-Gaussian distribution, a four parameter
 distribution, for a \code{gamlss.family} object to be used in GAMLSS fitting
 using the function \code{gamlss()}.
 }
@@ -31,7 +31,8 @@ has density given by
 
 \eqn{f(x | \mu, \sigma, \nu, \tau) = \frac{\tau}{\nu} \exp(w) \Phi \left( z - \frac{\sigma}{\nu} \right) \left[ \Phi(z) - \exp(w)  \Phi \left( z - \frac{\sigma}{\nu} \right) \right]^{\tau-1}}
 
-for \eqn{-\infty < x < \infty}. With \eqn{w=\frac{\mu-x}{\nu} + \frac{\sigma^2}{2\nu^2}} and \eqn{z=\frac{x-\mu}{\sigma}}.
+for \eqn{-\infty < x < \infty}. With \eqn{w=\frac{\mu-x}{\nu} + \frac{\sigma^2}{2\nu^2}} and \eqn{z=\frac{x-\mu}{\sigma}}
+and \eqn{\Phi} is the cumulative function for the standard normal distribution.
 }
 \examples{
 
@@ -48,10 +49,10 @@ true_theta <- c(true_mu, true_si, true_nu, true_ta)
 
 # Graphing the pdf
 curve(dGEG(x, mu=true_mu, sigma=true_si, nu=true_nu, tau=true_ta),
+      ylab="Density", xlab="X", las=1,
       from=-25, to=25, lwd=3, col="tomato")
 
 # Simulating a random sample
-set.seed(1234)
 y <- rGEG(n=n, mu=true_mu, sigma=true_si, nu=true_nu, tau=true_ta)
 
 # Estimating paramaters
@@ -59,6 +60,7 @@ library(gamlss)
 mod <- gamlss(y ~ 1, family=GEG,
               control=gamlss.control(n.cyc=1000, trace=TRUE))
 
+# Vector with the estimated results
 res <- c(mu_hat=coef(mod, what="mu"),
          sigma_hat=exp(coef(mod, what="sigma")),
          nu_hat=exp(coef(mod, what="nu")),
@@ -67,7 +69,7 @@ res <- c(mu_hat=coef(mod, what="mu"),
 # Comparing true vector and estimated vector
 round(cbind(true_theta, with_GEG=res), digits=2)
 
-# Histogram and two estimated densities
+# Histogram, estimated density and true density
 truehist(y, ylab="Density", col="gray", las=1)
 
 curve(dGEG(x, mu=res[1], sigma=res[2], nu=res[3], tau=res[4]),
@@ -83,7 +85,6 @@ legend("topright", lwd=2, bty="n",
 
 
 # Example 2 - with covariates ---------------------------------------------
-
 n <- 5000
 
 # The true parameters are:
@@ -105,25 +106,25 @@ x2 <- runif(n, min=0.49, max=0.51)
 
 # Simulating a random sample
 y <- rGEG(n=n,
-          mu    =     b0_mu + b1_mu * x1,
+          mu    =     b0_mu    + b1_mu    * x1,
           sigma = exp(b0_sigma + b1_sigma * x2),
           nu    = true_nu,
-          tau   = true_ta
-)
+          tau   = true_ta)
 
 # The dataframe
 datos <- data.frame(y=y, x1=x1, x2=x2)
 
 # Estimating paramaters
 # Using gamlss with our proposal
-mod <- NULL
 mod <- gamlss(y ~ x1,
               sigma.fo = ~ x2,
               family=GEG,
               control=gamlss.control(n.cyc=10000, trace=TRUE))
 
+# To obtain the estimated parameters
 param <- unlist(coefAll(mod))
 
+# Comparing true vector and estimated vector
 res <- cbind(true_theta, with_gamlss=c(param[1:4], exp(param[5:6])))
 round(res, digits=2)
 
