@@ -137,6 +137,26 @@ and \(\Phi\) is the cumulative function for the standard normal distribution.</p
 <span class="r-in"><span>                <span class="st">"mu=7, sigma=0.25, nu=0.05, tau=0.5"</span>,</span></span>
 <span class="r-in"><span>                <span class="st">"mu=7, sigma=0.25, nu=0.05, tau=0.1"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="dGEG-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## The cumulative distribution function</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html" class="external-link">curve</a></span><span class="op">(</span><span class="fu">pGEG</span><span class="op">(</span><span class="va">x</span>, mu<span class="op">=</span><span class="op">-</span><span class="fl">5</span>, sigma<span class="op">=</span><span class="fl">0.25</span>, nu<span class="op">=</span><span class="fl">0.05</span>, tau<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, from<span class="op">=</span><span class="op">-</span><span class="fl">10</span>, to<span class="op">=</span><span class="fl">10</span>,</span></span>
+<span class="r-in"><span>      col<span class="op">=</span><span class="st">"red"</span>, las<span class="op">=</span><span class="fl">1</span>, ylab<span class="op">=</span><span class="st">"F(x)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html" class="external-link">curve</a></span><span class="op">(</span><span class="fu">pGEG</span><span class="op">(</span><span class="va">x</span>, mu<span class="op">=</span><span class="op">-</span><span class="fl">2</span>, sigma<span class="op">=</span><span class="fl">0.25</span>, nu<span class="op">=</span><span class="fl">0.05</span>, tau<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      add<span class="op">=</span><span class="cn">TRUE</span>, col<span class="op">=</span><span class="st">"blue3"</span>, las<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="dGEG-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## The quantile function</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">0</span>, to<span class="op">=</span><span class="fl">0.99999</span>, length.out<span class="op">=</span><span class="fl">100</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu">qGEG</span><span class="op">(</span><span class="va">p</span>, mu<span class="op">=</span><span class="fl">7</span>, sigma<span class="op">=</span><span class="fl">0.25</span>, nu<span class="op">=</span><span class="fl">0.05</span>, tau<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, y<span class="op">=</span><span class="va">p</span>, xlab<span class="op">=</span><span class="st">"Quantile"</span>,</span></span>
+<span class="r-in"><span>     las<span class="op">=</span><span class="fl">1</span>, ylab<span class="op">=</span><span class="st">"Probability"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html" class="external-link">curve</a></span><span class="op">(</span><span class="fu">pGEG</span><span class="op">(</span><span class="va">x</span>, mu<span class="op">=</span><span class="fl">7</span>, sigma<span class="op">=</span><span class="fl">0.25</span>, nu<span class="op">=</span><span class="fl">0.05</span>, tau<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, from<span class="op">=</span><span class="fl">0</span>, add<span class="op">=</span><span class="cn">TRUE</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="dGEG-3.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## The random function</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="fu">rGEG</span><span class="op">(</span>n<span class="op">=</span><span class="fl">1000</span>, mu<span class="op">=</span><span class="fl">7</span>, sigma<span class="op">=</span><span class="fl">0.25</span>, nu<span class="op">=</span><span class="fl">0.05</span>, tau<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, freq<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"x"</span>,</span></span>
+<span class="r-in"><span>     ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span><span class="op">)</span>, las<span class="op">=</span><span class="fl">1</span>, main<span class="op">=</span><span class="st">""</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html" class="external-link">curve</a></span><span class="op">(</span><span class="fu">dGEG</span><span class="op">(</span><span class="va">x</span>, mu<span class="op">=</span><span class="fl">7</span>, sigma<span class="op">=</span><span class="fl">0.25</span>, nu<span class="op">=</span><span class="fl">0.05</span>, tau<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, add<span class="op">=</span><span class="cn">TRUE</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="dGEG-4.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -144,7 +164,7 @@ and \(\Phi\) is the cumulative function for the standard normal distribution.</p
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by Freddy Hernandez.</p>
+  <p></p><p>Developed by Freddy Hernandez-Barajas, Fernando Marmolejo-Ramos.</p>
 </div>
 
 <div class="pkgdown-footer-right">
