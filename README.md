@@ -1,5 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/fhernanb/RealDists/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fhernanb/RealDists/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 # RealDists <img src="auxiliar/figures/logo.png" align="right" height="180" align="right"/>
 
