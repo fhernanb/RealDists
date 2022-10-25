@@ -342,7 +342,6 @@ GEG <- function (mu.link="identity", sigma.link="log", nu.link="log", tau.link="
 #' y <- rGEG(n=100, mu=1, sigma=1, nu=1, tau=1)
 #' estim_mu_sigma_nu_tau_GEG(y=y)
 #' @importFrom stats optim
-#' @export
 estim_mu_sigma_nu_tau_GEG <- function(y) {
   mod <- optim(par=c(0, 0, 0, 0),
                fn=logLik_GEG,
