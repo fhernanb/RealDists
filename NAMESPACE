@@ -2,6 +2,8 @@
 
 export(GEG)
 export(dGEG)
+export(estim_mu_sigma_nu_tau_GEG)
+export(logLik_GEG)
 export(pGEG)
 export(qGEG)
 export(rGEG)
