@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-# RealDists <img src="man/figures/logo2.png" align="right" height="45" align="right"/>
+# RealDists <img src="man/figures/logo2.png" align="right" height="180" align="right"/>
 
 In this package are available statistical distributions defined in $\Re$ support. With this package it is possible to estimate parameters and fit regression models within GAMLSS framework.
 
@@ -29,6 +29,6 @@ To install the `RealDists` package you need to install `devtools` package before
 ```r
 if (!require('devtools')) install.packages('devtools')
 devtools::install_github('fhernanb/RealDists', force=TRUE)
-require(RealDists)
+library(RealDists)
 ```
 You can visit the [package website](https://fhernanb.github.io/RealDists/) to explore the vignettes (articles) and function reference. 
