@@ -48,7 +48,7 @@ legend("topright", lwd=2, bty="n",
 
 
 # Example 2 - with covariates ---------------------------------------------
-n <- 5000
+n <- 500
 
 # The true parameters are:
 b0_mu <- -1
