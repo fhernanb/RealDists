@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-# RealDists <img src="man/figures/logo3.png" align="right" height="180" align="right"/>
+# RealDists <img src="man/figures/logo1.png" align="right" height="90" align="right"/>
 
 In this package are available statistical distributions defined in $\Re$ support. With this package it is possible to estimate parameters and fit regression models within GAMLSS framework.
 

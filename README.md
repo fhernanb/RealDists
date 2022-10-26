@@ -5,7 +5,7 @@
 [![R-CMD-check](https://github.com/fhernanb/RealDists/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fhernanb/RealDists/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-# RealDists <img src="man/figures/logo3.png" align="right" height="180" align="right"/>
+# RealDists <img src="man/figures/logo1.png" align="right" height="90" align="right"/>
 
 In this package are available statistical distributions defined in
 ![\Re](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%5CRe "\Re")
