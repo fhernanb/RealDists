@@ -43,12 +43,17 @@ dGEG <- function(x, mu=0, sigma=1, nu=1, tau=1, log=FALSE){
   z <- (x-mu)/sigma
   w <- (mu-x)/nu + sigma^2/(2*nu^2)
   res <- log(tau) - log(nu) + w
-  res <- res + log(pnorm(z - sigma/nu))
-  res <- res + (tau-1) * log(pnorm(z) - exp(w) * pnorm(z - sigma/nu))
+  res <- res + pnorm(z - sigma/nu, log.p=TRUE)
+  aux <- pnorm(z) - exp(w) * pnorm(z - sigma/nu)
+  aux[aux < 9.881313e-324] <- .Machine$double.eps
+  res <- res + (tau-1) * log(aux)
   if(log)
-    return(res)
+    result <- res
   else
-    return(exp(res))
+    result <- exp(res)
+  # Too small to compute, zero it
+  result[is.nan(result)] <- 0
+  return(result)
 }
 #' @importFrom stats pnorm
 #' @export
