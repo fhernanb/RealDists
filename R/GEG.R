@@ -61,6 +61,8 @@ GEG <- function (mu.link="identity", sigma.link="log", nu.link="log", tau.link="
                  nu.dr    = vstats$mu.eta,
                  tau.dr   = tstats$mu.eta,
 
+                 # Primeras derivadas
+
                  dldm = function(y, mu, sigma, nu, tau) {
                    z <- (y-mu)/sigma
                    w <- (mu-y)/nu + sigma^2/(2*nu^2)
